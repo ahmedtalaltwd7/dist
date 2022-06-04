@@ -1,0 +1,948 @@
+@import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
+body {
+  background: #ffd54f;
+  text-align: center;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  
+  outline: none;
+  cursor: pointer;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.card {
+  font-family: Roboto;
+  display: block;
+  position: relative;
+  width: 400px;
+  min-height: 100px;
+  margin: 50px auto;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.header {
+  display: block;
+  width: 100%;
+  height: 100px;
+  font-weight: 600;
+  background: #ffc107;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.add {
+  width: 0;
+  height: 0;
+  top: 50px;
+  float: right;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.add-field {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 500;
+  background: #F5F6F7;
+  resize: none;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.list>li {
+  list-style: none;
+  width: 100%;
+  min-height: 40px;
+  background: #fff;
+}
+
+.view>.toggle {
+  display: inline-block;
+  float: left;
+}
+
+.view>.destroy {
+  display: inline-block;
+  float: right;
+}
+
+.fab {
+  display: block;
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  top: -28px;
+  right: -28px;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.4s ease-in-out;
+}
+
+.fab>i {
+  color: #fff;
+  line-height: 56px;
+  font-size: 2em;
+  transition: all 0.4s ease-in-out;
+}
+
+.is-clicked {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.is-clicked>i {
+  transform: rotate(360deg);
+}
+
+.is-active .add {
+  width: 100%;
+  height: 70px;
+}
+
+#new-todo,
+.edit {
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+#new-todo {
+  z-index: 2;
+  height: auto;
+}
+
+label[for='toggle-all'] {
+  display: none;
+}
+
+#todoapp input::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+#todoapp input:-moz-placeholder {
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+#toggle-all {
+  position: absolute;
+  top: -42px;
+  left: -4px;
+  width: 40px;
+  text-align: center;
+  border: none;
+  /* Mobile Safari */
+}
+
+#toggle-all:before {
+  content: '»';
+  font-size: 28px;
+  color: #d9d9d9;
+  padding: 0 25px 7px;
+}
+
+#toggle-all:checked:before {
+  color: #737373;
+}
+
+#todo-list {
+  list-style: none;
+}
+
+#todo-list li {
+  position: relative;
+  font-size: 12px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#todo-list li:last-child {
+  border-bottom: none;
+}
+
+#todo-list li.editing {
+  border-bottom: none;
+  padding: 0;
+}
+
+#todo-list li.editing .edit {
+  text-align: center;
+  display: block;
+  width: 80%;
+  min-height: 40px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+#todo-list li.editing .view {
+  display: none;
+  height: auto;
+}
+
+#todo-list li .toggle {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  
+  height: auto;
+  top: 0;
+  left: 20px;
+  margin: 10px 0;
+  border: none;
+  /* Mobile Safari */
+  
+  -webkit-appearance: none;
+  /*-moz-appearance: none;*/
+  
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+#todo-list li .toggle:after {
+  content: '✔';
+  line-height: 43px;
+  /* 40 + a couple of pixels visual adjustment */
+  
+  font-size: 20px;
+  color: #d9d9d9;
+  text-shadow: 0 -1px 0 #bfbfbf;
+}
+
+#todo-list li .toggle:checked:after {
+  color: #4caf50;
+  text-shadow: 0 1px 0 #669991;
+  bottom: 1px;
+  position: relative;
+}
+
+#todo-list li label {
+  word-break: break-word;
+  overflow: auto;
+  padding: 15px;
+  display: block;
+  line-height: 1.2;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+#todo-list li.completed label {
+  color: #a9a9a9;
+  text-decoration: line-through;
+}
+
+#todo-list li .destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 22px;
+  color: #f44336;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#todo-list li .destroy:hover {
+  text-shadow: 0 0 1px #000, 0 0 10px rgba(199, 107, 107, 0.8);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+#todo-list li .destroy:after {
+  content: '✖';
+}
+
+#todo-list li:hover .destroy {
+  display: block;
+}
+
+#todo-list li .edit {
+  display: none;
+}
+
+#todo-list li.editing:last-child {
+  margin-bottom: -1px;
+}
+
+#footer {
+  color: #777;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  bottom: -31px;
+  left: 0;
+  height: 20px;
+  z-index: -1;
+}
+
+#footer:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 31px;
+  left: 0;
+  height: 50px;
+  z-index: -1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 6px 0 -3px rgba(255, 255, 255, 0.8), 0 7px 1px -3px rgba(0, 0, 0, 0.3), 0 43px 0 -6px rgba(255, 255, 255, 0.8), 0 44px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+#todo-count {
+  float: left;
+  text-align: left;
+}
+
+#filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+#filters li {
+  display: inline;
+}
+
+#filters li a {
+  color: #83756f;
+  margin: 2px;
+  text-decoration: none;
+}
+
+#filters li a.selected {
+  font-weight: bold;
+}
+
+#clear-completed {
+  float: right;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 11px;
+  padding: 0 10px;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+#clear-completed:hover {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+#info {
+  margin: 65px auto 0;
+  color: #a6a6a6;
+  font-size: 12px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+#info a {
+  color: inherit;
+}
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox and Opera
+*/
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #toggle-all, #todo-list li .toggle {
+    background: none;
+  }
+  #todo-list li .toggle {
+    height: 40px;
+  }
+  #toggle-all {
+    top: -56px;
+    left: -15px;
+    width: 65px;
+    height: 41px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#sync-error,
+#sync-success {
+  display: none;
+}
+
+[data-sync-state=syncing] #sync-success {
+  display: block;
+}
+
+[data-sync-state=error] #sync-error {
+  display: block;
+}
+
+/* Offline */
+.offline-ui,
+.offline-ui *,
+.offline-ui:before,
+.offline-ui:after,
+.offline-ui *:before,
+.offline-ui *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.offline-ui {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+    border-radius: 1px;
+    display: none;
+    position: fixed;
+    background: white;
+    z-index: 2000;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.offline-ui .offline-ui-content:before {
+    display: inline;
+}
+
+.offline-ui .offline-ui-retry {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+.offline-ui .offline-ui-retry:before {
+    display: inline;
+}
+
+.offline-ui.offline-ui-up.offline-ui-up-5s {
+    display: block;
+}
+
+.offline-ui.offline-ui-down {
+    display: block;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-retry {
+    display: block;
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+    display: none;
+}
+
+@-webkit-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-moz-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-ms-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-o-keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes offline-slideIn {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-moz-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-ms-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-o-keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@keyframes offline-slideOut {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        -webkit-transform: translate3d(0, -150%, 0);
+        transform: translate3d(0, -150%, 0);
+    }
+}
+
+@-webkit-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        -webkit-transform: scale(.1);
+        -moz-transform: scale(.1);
+        -ms-transform: scale(.1);
+        -o-transform: scale(.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes offline-pulsate {
+    0% {
+        transform: scale(.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.offline-ui {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    padding: 1em;
+    top: 1em;
+    width: 38em;
+    max-width: 100%;
+    box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.10), 0px 4px 12px -7px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+@media (max-width: 38em) {
+    .offline-ui {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        top: 0;
+    }
+}
+
+.offline-ui .offline-ui-content:before {
+    line-height: 1.25em;
+}
+
+.offline-ui .offline-ui-retry {
+    position: absolute;
+    right: 3em;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    line-height: 3.5em;
+    height: 3.5em;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.offline-ui.offline-ui-up {
+    -webkit-animation: offline-slideOut forwards 0.5s 2s;
+    -moz-animation: offline-slideOut forwards 0.5s 2s;
+    -ms-animation: offline-slideOut forwards 0.5s 2s;
+    -o-animation: offline-slideOut forwards 0.5s 2s;
+    animation: offline-slideOut forwards 0.5s 2s;
+    -webkit-backface-visibility: hidden;
+    background: #4CAF50;
+    color: #FFFFFF;
+}
+
+.offline-ui.offline-ui-down {
+    -webkit-animation: offline-slideIn 0.5s;
+    -moz-animation: offline-slideIn 0.5s;
+    -ms-animation: offline-slideIn 0.5s;
+    -o-animation: offline-slideIn 0.5s;
+    animation: offline-slideIn 0.5s;
+    -webkit-backface-visibility: hidden;
+    background: #F44336;
+    color: #FFFFFF;
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting,
+.offline-ui.offline-ui-down.offline-ui-waiting {
+    background: #FF9800;
+    color: #FFFFFF;
+    padding-right: 3em;
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting:after,
+.offline-ui.offline-ui-down.offline-ui-waiting:after {
+    -webkit-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -moz-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -ms-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -o-animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    animation: offline-pulsate 1s cubic-bezier(0, .94, 1, .06) infinite;
+    -webkit-backface-visibility: hidden;
+    content: " ";
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 1em;
+    width: 1em;
+    border: 2px solid #263238;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting {
+    padding-right: 11em;
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting.offline-ui-reconnect-failed-2s {
+    padding-right: 0;
+}
+
+.offline-ui .offline-ui-retry:before {
+    content: "Reconnect";
+}
+
+.offline-ui.offline-ui-up .offline-ui-content:before {
+    content: "Your computer is connected to the internet.";
+}
+
+@media (max-width: 1024px) {
+    .offline-ui.offline-ui-up .offline-ui-content:before {
+        content: "Your device is connected to the internet.";
+    }
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-up .offline-ui-content:before {
+        content: "Your device is connected.";
+    }
+}
+
+.offline-ui.offline-ui-down .offline-ui-content:before {
+    content: "Your computer lost its internet connection.";
+}
+
+@media (max-width: 1024px) {
+    .offline-ui.offline-ui-down .offline-ui-content:before {
+        content: "Your device lost its internet connection.";
+    }
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down .offline-ui-content:before {
+        content: "Your device isn't connected.";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-connecting .offline-ui-content:before,
+.offline-ui.offline-ui-down.offline-ui-connecting-2s .offline-ui-content:before {
+    content: "Attempting to reconnect...";
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " seconds...";
+}
+
+@media (max-width: 568px) {
+    /* line 42, ../sass/_content.sass */
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "s...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " second...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="second"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "s...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minutes...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "m...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " minute...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="minute"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "m...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hours...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "h...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+    content: "Connection lost. Reconnecting in " attr(data-retry-in-value) " hour...";
+}
+
+@media (max-width: 568px) {
+    .offline-ui.offline-ui-down.offline-ui-waiting .offline-ui-content[data-retry-in-unit="hour"][data-retry-in-value="1"]:before {
+        content: "Reconnecting in " attr(data-retry-in-value) "h...";
+    }
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s.offline-ui-waiting .offline-ui-retry {
+    display: none;
+}
+
+.offline-ui.offline-ui-down.offline-ui-reconnect-failed-2s .offline-ui-content:before {
+    content: "Connection attempt failed.";
+}
