@@ -18,7 +18,7 @@ var syncDom = document.getElementById('sync-wrapper');
 // EDITING STARTS HERE (you dont need to edit anything above this line)
 
 var db = new PouchDB('todo');
-var remoteCouch = 'https://admin:StrongPassword@167.99.46.33:6984/todo';
+var remoteCouch = 'http://admin:1234@146.190.21.225:5984/todo';
 
 db.changes({
   since: 'now',
